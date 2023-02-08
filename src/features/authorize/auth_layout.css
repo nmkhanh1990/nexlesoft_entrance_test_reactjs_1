@@ -1,0 +1,39 @@
+.auth-layout {
+  width: 100vw;
+  height: 99vh;
+  display: flex;
+}
+
+.auth-image {
+  flex: 1;
+  height: 100%;
+}
+
+.auth-image img {
+  width: 100%;
+  min-width: 60rem;
+  height: 100%;
+  min-height: 50rem;
+}
+
+.auth-form {
+  width: calc(20rem + 5vw);
+  min-width: fit-content;
+  padding: calc(1rem + 1vw) calc(3rem + 1vw);
+}
+.auth-form .title {
+  font-size: 1.5rem;
+}
+.auth-form .guide {
+  font-size: 1.1rem;
+  color: var(--text-color-gray);
+}
+.auth-form button {
+  width: 100%;
+  padding: 0.5rem var(--bs-btn-padding-x);
+  background: #746acf;
+}
+
+label span.required {
+  color: red;
+}

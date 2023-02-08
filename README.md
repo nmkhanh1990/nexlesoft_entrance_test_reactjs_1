@@ -14,7 +14,7 @@ If the user already logged into the app before, the next time when the app opens
 
 # General project requirement
 ## Technologies
-Use react-react-app as the initial code structure. Refer to https://create-react-app.dev 
+Use create-react-app as the initial code structure. Refer to https://create-react-app.dev 
 Use reactstrap to build UI components. Refer to https://reactstrap.github.io for more details
 Use bootstrap 4/bootstrap 5 for CSS adjustment if needed
 Use redux-thunk for state management

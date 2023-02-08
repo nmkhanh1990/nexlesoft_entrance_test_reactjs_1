@@ -1,0 +1,47 @@
+:root {
+  --text-color: #333;
+  --text-color-gray: #555;
+  --link-color: #746acf;
+}
+
+* {
+  caret-color: transparent;
+}
+
+html {
+  font-size: calc(10px + 0.35vw);
+  color: var(--text-color);
+}
+
+a {
+  color: var(--link-color) !important;
+  text-decoration: none !important;
+}
+
+.flex-1 {
+  flex: 1;
+}
+.flex-2 {
+  flex: 2;
+}
+.flex-3 {
+  flex: 3;
+}
+.flex-4 {
+  flex: 4;
+}
+.flex-5 {
+  flex: 5;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.form .form-control {
+  padding: 0.6rem 0.9rem;
+}
+.form .form-check-input {
+  width: 1.1rem;
+  height: 1.1rem;
+}
