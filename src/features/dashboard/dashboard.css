@@ -1,0 +1,8 @@
+.dashboard {
+  background: var(--background-color);
+}
+
+.dashboard .title {
+  padding-top: calc(3rem + 3vw);
+  text-align: center;
+}

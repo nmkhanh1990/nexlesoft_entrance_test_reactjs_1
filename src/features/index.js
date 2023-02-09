@@ -1,5 +1,5 @@
-export { AuthLayout } from './authorize/auth_layout';
-export { Signup } from './authorize/signup/signup';
-export { Login } from './authorize/login/login';
+export { AuthLayout } from './auth/auth_layout';
+export { Signup } from './auth/signup/signup';
+export { Login } from './auth/login/login';
 export { Layout } from './layout/layout';
 export { Dashboard } from './dashboard/dashboard';

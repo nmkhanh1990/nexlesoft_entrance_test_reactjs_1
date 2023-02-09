@@ -32,11 +32,6 @@
 }
 .auth-form button {
   width: 100%;
-  padding: 0.5rem var(--bs-btn-padding-x);
-  background: var(--link-color);
-}
-.auth-form button:hover {
-  background: var(--link-color-hover);
 }
 
 label span.required {

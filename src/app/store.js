@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import dataViewReducer from '../components/data_view/data_view_slice';
+import authReducer from '../features/auth/auth_layout_slice';
 
 export const store = configureStore({
   reducer: {
-    dataView: dataViewReducer,
+    auth: authReducer,
   },
 });

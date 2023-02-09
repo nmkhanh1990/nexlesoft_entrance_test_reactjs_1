@@ -24,7 +24,6 @@ export const dataViewSlice = createSlice({
         state.loading = true
       })
       .addCase(fetchAsync.fulfilled, (state, action) => {
-        console.log('payload', action.payload)
         state.loading = false
         state.data = action.payload;
       });

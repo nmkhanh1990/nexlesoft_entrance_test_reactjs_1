@@ -1,6 +1,10 @@
-import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux';
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap'
 import { Separator } from '../../../components'
+import { apiHelper } from '../../../app/apiHelper';
+import { signup, selectUser } from './../auth_layout_slice';
 
 import '../auth_layout.css'
 import './signup.css'
@@ -11,6 +15,19 @@ import emailImg from '../../../assets/images/email.png'
 import gitHubImg from '../../../assets/images/github.png'
 
 export function Signup() {
+  const userStored = useSelector(selectUser)
+
+  const [user, setUser] = useState(userStored)
+  const [agree, setAgree] = useState(false)
+
+  const dispatch = useDispatch()
+
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (userStored?.token) navigate('/dashboard')
+  }, [userStored])
+
   return (
     <div className='signup'>
       <div className='title mb-3'>Adventure starts here</div>
@@ -18,37 +35,36 @@ export function Signup() {
       <Form className='form mt-5'>
         <FormGroup>
           <Label for='exampleFirstName'>
-            Frist name <span className='required'>*</span>
+            First name <span className='required'>*</span>
           </Label>
-          <Input required id='exampleFirstName' name='firstname' placeholder='with a placeholder' type='text' />
+          <Input required placeholder='johndoe' onChange={e => setUser({...user, firstName: e.target.value})} />
         </FormGroup>
         <FormGroup>
           <Label for='exampleLastName'>
             Last name <span className='required'>*</span>
           </Label>
-          <Input required id='exampleLastName' name='lastname' placeholder='with a placeholder' type='text' />
+          <Input required placeholder='johndoe' onChange={e => setUser({...user, lastName: e.target.value})} />
         </FormGroup>
         <FormGroup>
           <Label for='exampleEmail'>
             Email <span className='required'>*</span>
           </Label>
-          <Input required id='exampleEmail' name='email' placeholder='with a placeholder' type='email' />
+          <Input required placeholder='johndoe@gmail.com' type='email' onChange={e => setUser({...user, email: e.target.value})}/>
         </FormGroup>
         <FormGroup>
           <div className='d-flex justify-content-between'>
             <Label for='examplePassword'>
               Password <span className='required'>*</span>
             </Label>
-            <Link to='/forgot-pass'>Forgot password?</Link>
           </div>
-          <Input required id='examplePassword' name='password' placeholder='password placeholder' type='password' />
+          <Input required placeholder='******' type='password' onChange={e => setUser({...user, password: e.target.value})}/>
         </FormGroup>
         <FormGroup check inline>
-          <Input type='checkbox' />
-          <Label check>I aggree to <Link to='privacy'>privacy policy & terms</Link></Label>
+          <Input type='checkbox' checked={agree} onChange={e => setAgree(e.target.checked)}/>
+          <Label check onClick={() => setAgree(!agree)}>I aggree to <Link to='privacy'>privacy policy & terms</Link></Label>
         </FormGroup>
         <div className='mt-3'>
-          <Button className='login'>Login</Button>
+          <Button className='login' disabled={!agree} onClick={() => dispatch(signup(user))}>Sign up</Button>
         </div>
       </Form>
       <div className='guide text-center mt-3'>
