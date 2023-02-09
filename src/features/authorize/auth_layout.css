@@ -17,12 +17,14 @@
 }
 
 .auth-form {
-  width: calc(20rem + 5vw);
-  min-width: fit-content;
-  padding: calc(1rem + 1vw) calc(3rem + 1vw);
+  width: calc(20rem + 10vw);
+  padding: calc(1rem + 1vw) calc(2rem + 1vw);
+  display: flex;
+  align-items: center;
+  color: var(--text-color-gray);
 }
 .auth-form .title {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 .auth-form .guide {
   font-size: 1.1rem;
@@ -31,9 +33,21 @@
 .auth-form button {
   width: 100%;
   padding: 0.5rem var(--bs-btn-padding-x);
-  background: #746acf;
+  background: var(--link-color);
+}
+.auth-form button:hover {
+  background: var(--link-color-hover);
 }
 
 label span.required {
   color: red;
+}
+
+.orther-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.orther-login > img + img {
+  margin-left: 0.75rem;
 }

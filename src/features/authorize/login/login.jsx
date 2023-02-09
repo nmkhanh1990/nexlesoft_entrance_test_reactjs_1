@@ -1,8 +1,14 @@
 import { Link } from 'react-router-dom'
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap'
+import { Separator } from '../../../components'
 
 import '../auth_layout.css'
 import './login.css'
+
+import facebookImg from '../../../assets/images/facebook.png'
+import twitterImg from '../../../assets/images/twitter.png'
+import emailImg from '../../../assets/images/email.png'
+import gitHubImg from '../../../assets/images/github.png'
 
 export function Login() {
   return (
@@ -36,6 +42,13 @@ export function Login() {
         </div>
       </Form>
       <div className='guide text-center mt-3'>New on our platform? <Link to='/signup'>Create an account</Link></div>
+      <Separator text='or'/>
+      <div className='orther-login'>
+        <img src={facebookImg} alt='Facebook' />
+        <img src={twitterImg} alt='Twitter'/>
+        <img src={emailImg} alt='Email'/>
+        <img src={gitHubImg} alt='GitHub'/>
+      </div>
     </div>
   )
 }

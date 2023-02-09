@@ -1,7 +1,10 @@
 :root {
   --text-color: #333;
   --text-color-gray: #555;
+  --placeholder-color: #aaa;
   --link-color: #746acf;
+  --link-color-hover: #645abf;
+  --border-color: #ccc;
 }
 
 * {
@@ -36,6 +39,10 @@ a {
 
 .text-center {
   text-align: center;
+}
+
+form input.form-control::placeholder {
+  color: var(--placeholder-color);
 }
 
 .form .form-control {

@@ -1,0 +1,15 @@
+.separator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.separator .line {
+  border-top: 1px solid var(--border-color);
+  flex: 1;
+}
+
+.separator .text {
+  margin: calc(0.5rem + 0.5vw);
+  line-height: 1rem;
+}
